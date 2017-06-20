@@ -118,11 +118,16 @@ insert into TblLibros (idLibro, nombreLibro, Autor, Editorial, Genero, Anio) val
 end//
 
 drop procedure if exist HacerPrestamo//
-CREATE PROCEDURE HacerPrestamo(_idPersona int, _idLibro int, _status boolean)
+CREATE PROCEDURE HacerPrestamo(_idPersona int, _idLibro int)
 BEGIN
-INSERT INTO Prestamo(idPersona, idLibro, status) values (_idPersona, _idLibro, _status)
+INSERT INTO Prestamo(idPersona, idLibro, status) values (_idPersona, _idLibro, true)
 END//
 
+drop procedure if exist QuitarPrestamo//
+CREATE PROCEDURE QuitarPrestamo(_idPrestamo int)
+BEGIN
+UPDATE Prestamo SET status = false WHERE idPrestamo = _idPrestamo
+END//
 
 call RegistrarU('Sebastian','Santiago','Hernandez','sebasc@gmail.com','Sebas1','qwerty123',4);
 call EliminarU('Susy1');
