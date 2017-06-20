@@ -117,16 +117,16 @@ begin
 insert into TblLibros (idLibro, nombreLibro, Autor, Editorial, Genero, Anio) values (_idLibro, _NombreLibro,_Autor, _Editorial, _Genero, _Anio);
 end//
 
-drop procedure if exist HacerPrestamo//
+drop procedure if exists HacerPrestamo//
 CREATE PROCEDURE HacerPrestamo(_idPersona int, _idLibro int)
 BEGIN
-INSERT INTO Prestamo(idPersona, idLibro, status) values (_idPersona, _idLibro, true)
+INSERT INTO Prestamo(idPersona, idLibro, status) values (_idPersona, _idLibro, true);
 END//
 
-drop procedure if exist QuitarPrestamo//
+drop procedure if exists QuitarPrestamo//
 CREATE PROCEDURE QuitarPrestamo(_idPrestamo int)
 BEGIN
-UPDATE Prestamo SET status = false WHERE idPrestamo = _idPrestamo
+UPDATE Prestamo SET status = false WHERE idPrestamo = _idPrestamo;
 END//
 
 call RegistrarU('Sebastian','Santiago','Hernandez','sebasc@gmail.com','Sebas1','qwerty123',4);
