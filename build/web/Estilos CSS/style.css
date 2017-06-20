@@ -1,0 +1,211 @@
+*{
+  margin:0;
+  padding:0;
+}
+#contenido{
+  width: 80%;
+  margin: 100px 0  0 10%;
+  height: 100%;
+  background-color: #4B4848;
+  font-family: sans-serif;
+
+}
+#infomacion{
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+
+}
+#info-menu{
+  width: 25%;
+  float: left;
+  height: 100%;
+  font-size: 20px;
+  background-color: #FA8072;
+}
+
+#info-menu li{
+  color: white;
+  list-style: none;
+  height: 52px;
+  text-align: center;
+  padding-top: 20px;
+  background-color: #FA8072;
+  border-bottom-style: solid;
+  border-color: gray;
+
+
+}
+#info-menu li:hover{
+	
+background-color: #E17366;
+}
+#formulario{
+  height: 100%;
+}
+iframe{
+  height: 100%;
+  width: 100%;
+}
+#info-contenido{
+  width: 75%;
+  float: left;
+  height: 100%;
+  margin-top: 20px;
+}
+#titulo24{
+  height:30px;
+  color: white;
+  width:100%;
+  margin: auto;
+  margin-bottom: 60px;
+  font-family: sans-serif;
+  font-size: 45px;
+}
+#foto{
+  float: left;
+  height: 80%;
+  width: 20%;
+  margin: 22px 30px 0 25px;
+}
+#introducir{
+
+color:white;
+font-family: sans-serif;
+height: 305px;
+width: 50%;
+float:left;
+margin: auto;
+
+}
+
+#campos{
+  float: left;
+  height: 420px;
+  width: 100%;
+}
+#boton{
+  height:30px;
+  float: left;
+  margin:auto;
+}
+ button[type =button]{
+   border: none;
+   background: #FA8072;
+   color: #f2f2f2;
+   padding: 10px;
+   font-size: 18px;
+   border-radius: 5px;
+   position: relative;
+   box-sizing: border-box;
+   transition: all 500ms ease;
+   cursor: pointer;
+ }
+
+button{
+   border: none;
+   background: #3a7999;
+   color: #f2f2f2;
+   padding: 10px;
+   font-size: 18px;
+   border-radius: 5px;
+   position: relative;
+   box-sizing: border-box;
+   transition: all 500ms ease;
+   cursor: pointer;
+}
+a:link
+{
+ text-decoration:none;
+}
+button[type =button]:hover {
+ background: rgba(0,0,0,0);
+ color: #ffffff;
+ box-shadow: inset 0 0 0 3px #FA8072;
+}
+button:hover {
+ background: rgba(0,0,0,0);
+ color: #3a7999;
+ box-shadow: inset 0 0 0 3px #3a7999;
+}
+#avisos{
+    height: 500px;
+    width: 60%;
+    margin: 50px 0 0 350px ;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: #6078EA;
+    border-style: solid;
+    border-color:black;   
+}
+#imagen{
+    width: 1005px; 
+    height: 450px;
+    margin: 20px 0 0 150px;
+}
+#todo{
+    width: 100%;
+    height: 100%;;
+    float: right;
+}
+.titulos{
+    margin: 80px 0 0 800px;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: #4B4848;  
+}
+#fotodocente{
+    margin: 30px 0 10px 70px;
+    width: 250px;
+    float: left;
+    height: 550px;
+}
+#datosprofesor{
+    margin: 70px 0 0 230px; 
+    font-family: sans-serif;
+    font-size: 11px;
+    color: #4B4848;
+    float: right;
+}
+.estrellas{
+    font-size: 0;
+    /* Podríamos quitarlo, 
+        pero de esta manera (siempre que no le demos padding), 
+	sólo aplicará la regla .estrellas:hover a cuando
+	también se esté haciendo hover a alguna estrella */
+    display: inline-block;
+}
+.estrellas a {
+	text-decoration: none;
+	display: inline-block;
+	/* Volver a dar tamaño al texto */
+	font-size: 32px;
+	font-size: 8rem;
+	color: #888;
+}
+.estrellas:hover a {
+	color: rgb(255, 217, 15);
+}
+/*
+ * El selector de hijo, es necesario para aumentar la especifidad
+ */
+.estrellas > a:hover ~ a {
+	color: #888;
+}
+
+.comentarios{
+    margin: 70px 0 0 0; 
+    color: #4B4848;
+}
+fieldset { 
+    padding: 0 10px 10px 20px;
+}
+
+.botones{
+    margin-left: 25%;
+    float: left;
+}
+form{
+    margin-top: 20px;
+}
+

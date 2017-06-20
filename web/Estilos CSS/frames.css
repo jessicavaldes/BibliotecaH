@@ -1,0 +1,418 @@
+@CHARSET "UTF-8";
+
+.Container1{
+    width: 75%;
+    height: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    min-width: 800px
+}
+
+div#inicio{
+    width: 100%;
+    height: 600px;
+    float: left;
+}
+
+div#principal{
+  
+  width: 100%;
+  height: 800px;
+  float: left;
+   
+}
+
+div#indexg{
+    margin: auto;
+    width: 80%;
+    height: 750px;
+    background:#2c5d63;
+    position: relative;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: all ease 2s;
+  animation: luz 2s linear ;
+  -webkit-animation: luz 2s linear 
+}
+
+div#general{
+   
+    width: 100%;
+    height: 750px;
+    background:#2c5d63;
+}
+div#general2{
+    margin: auto;
+    width: 100%;
+    height: 750px;
+    background:#2c5d63; 
+    
+}
+.texto{
+    
+    line-height: 300%;
+    font-size: 200%;
+    font-weight:bold;
+    color: white;
+    text-align: center;
+    font-family: CaviarDreams;
+    src: url(CaviarDreams.ttf);
+}
+.texto1{
+    color: white;
+    font-style:  Sans Serif;
+    font-size: 60px;
+    font-family: Gadugi;
+}
+div#barra{
+    width: 17%;
+    height: 100%;
+    
+    float: left;
+}
+div#foto{
+    width: 30%;
+    height: 60%;
+    
+    float: left;
+}
+div#fotopos{
+    margin: auto;
+   width: 55%;
+   height: 100%;
+}
+.usuario{
+     width: 30%;
+     height: 30%;
+     margin: auto;
+}
+div#usuariopos{
+   margin: auto;
+    height: 40%;
+    width: 70%;
+}
+div#usuariopos2{
+   margin: auto;
+    height: 60%;
+    width: 70%;
+}
+div#datos{
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+div#datospos{
+    width: 100%;
+    height: 20%;
+}
+div#actualizar{
+    width: 100%;
+    height: 20%;
+    float: left;
+}
+.cajatexto{
+    border: 1px solid #DBE1EB;
+    font-size: 15px;
+    font-family: Arial, Verdana;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    background: #FFFFFF;
+    background: linear-gradient(left, #FFFFFF, #F7F9FA);
+    background: -moz-linear-gradient(left, #FFFFFF, #F7F9FA);
+    background: -webkit-linear-gradient(left, #FFFFFF, #F7F9FA);
+    background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
+    color: #2E3133;
+}
+.cajatexto2{
+    width:60%;
+    height: 800px;
+    margin: auto;
+    border: 2px solid #DBE1EB;
+    font-size: 25px;
+    font-family: Arial, Verdana;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    background: #FFFFFF;
+    background: linear-gradient(left, #FFFFFF, #F7F9FA);
+    background: -moz-linear-gradient(left, #FFFFFF, #F7F9FA);
+    background: -webkit-linear-gradient(left, #FFFFFF, #F7F9FA);
+    background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
+    color: #2E3133;
+}
+.botonact{
+    margin-top: 50%;
+    margin-left: 30%;
+    -moz-box-shadow:inset 0px 34px 0px -15px #b54b3a;
+    -webkit-box-shadow:inset 0px 34px 0px -15px #b54b3a;
+    box-shadow:inset 0px 34px 0px -15px #b54b3a;
+    background-color:#A42127;
+    border:1px solid #241d13;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:25px;
+    font-weight:bold;
+    padding:9px 23px;
+    text-decoration:none;
+    text-shadow:0px -1px 0px #7a2a1d;
+}
+.myButton:hover {
+    background-color:#A42127;
+}
+botonact2{
+    margin-top: 25%;
+    margin-left: 20%;
+    -moz-box-shadow:inset 0px 34px 0px -15px #b54b3a;
+    -webkit-box-shadow:inset 0px 34px 0px -15px #b54b3a;
+    box-shadow:inset 0px 34px 0px -15px #b54b3a;
+    background-color:#A42127;
+    border:1px solid #241d13;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:25px;
+    font-weight:bold;
+    padding:9px 23px;
+    text-decoration:none;
+    text-shadow:0px -1px 0px #7a2a1d;
+}
+.myButton:hover {
+    background-color:#A42127;
+}
+.botonact3{
+    margin-top: 100%;
+    margin-left: 320%;
+    -moz-box-shadow:inset 0px 34px 0px -15px #b54b3a;
+    -webkit-box-shadow:inset 0px 34px 0px -15px #b54b3a;
+    box-shadow:inset 0px 34px 0px -15px #b54b3a;
+    background-color:#A42127;
+    border:1px solid #241d13;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:25px;
+    font-weight:bold;
+    padding:9px 23px;
+    text-decoration:none;
+    text-shadow:0px -1px 0px #7a2a1d;
+}
+.myButton:hover {
+    background-color:#A42127;
+}
+.boton{
+    text-align:center;
+    text-decoration: none;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    display:inline-block;
+    color: #FFFFFF;
+    background: #3498db;
+    padding: 15px 40px;
+    white-space: nowrap;
+    margin: 10px 5px;
+   -webkit-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.azul{
+    background: #3498db;
+    box-shadow: 0px 5px 0px 0px #2980B9;
+}
+.azul:hover{
+  background: #e14242;
+}
+
+.azul:active{
+  box-shadow: 0px 2px 0px 0px #2980B9;
+}
+
+.verde{
+  background: #34495e;
+  box-shadow: 0px 5px 0px 0px #27AE60;
+}
+
+.verde:hover{
+  background: #f78536;
+}
+
+.verde:active{
+  box-shadow: 0px 2px 0px 0px #27AE60;
+}
+
+.rojo{
+  background: #3498db;
+  box-shadow: 0px 5px 0px 0px #e14242;
+}
+
+.rojo:hover{
+  background: #e14242;
+}
+
+.rojo:active{
+  box-shadow: 0px 2px 0px 0px #C0392B;
+}
+
+
+
+
+
+.azul1{
+  background: 3498db;
+  box-shadow: 5px 0px 0px 0px #2980B9;
+}
+
+.azul:hover{
+  background: #e14242;
+}
+
+.azul:active{
+  box-shadow: 0px 2px 0px 0px #2980B9;
+}
+
+.verde1{
+  background: #34495e;
+  box-shadow: 5px 0px 0px 0px #27AE60;
+}
+
+.verde:hover{
+  background: #f78536;
+}
+
+.verde:active{
+  box-shadow: 0px 2px 0px 0px #27AE60;
+}
+
+.rojo1{
+  background: #3498db;
+  box-shadow: 5px 0px 0px 0px #e14242;
+  -webkit-transition: width 2s; /* Safari */
+  transition: width 2s;
+}
+
+div#rojo1:hover{
+    width: 30px;
+}
+
+.rojo:hover{
+  background: #e14242;
+  width: 30px;
+}
+
+.rojo:active{
+  box-shadow: 0px 2px 0px 0px #C0392B;
+}
+
+
+
+div#subir{
+    width: 100%;
+    height: 100%;
+    float: right;
+}
+
+
+
+div#posbotn2{
+    height: 20%;
+    margin-left:70%;
+    float: left;
+    
+    
+}
+
+
+div#botondir{
+ margin: auto;
+ width: 50%;
+}
+
+
+
+@-webkit-keyframes luz {
+       
+    100%     {transform: rotateY(360deg)}
+}
+@-moz-keyframes luz {
+        
+    100%     {transform: rotateY(360deg)}
+}
+@-keyframes luz {
+      
+    100%     {transform: rotateY(360deg)}
+}
+
+.cara1, .cara2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  
+}
+.cara1 {
+  
+  z-index: 2;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  opacity: 0.9;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+.cara2 {
+  
+}
+
+
+div#todo{
+    width: 83%;
+    height: 100%;
+    float: left;
+}
+
+  
+
+
+#cuadro{
+    width:83%; 
+    height:750px;
+    position:absolute;
+       
+    cursor:pointer}
+#DivForm{
+    background-color: #4B4848;
+}
+#DivForm form{
+    height: 25%;
+    width: 800px;
+    background-color: #4B4848;
+}
+#DivForm label{
+    margin-left: 25%;
+    margin-right: 35%;
+    padding: 10px;
+    float: left;
+}
+.botones{
+    margin-top: 20px;
+    margin-left: 25%;
+    float: left;
+}
+
+div{
+    
+}
+

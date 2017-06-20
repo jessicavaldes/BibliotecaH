@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+
+#menu div{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    background-color: #17EAD9;
+    font-size: 1.3em;
+    min-width: 800px;
+}
+#menu header{
+    width:15%;
+    height: 100%;
+    float: left;
+}
+#menu img{
+    height: 100%;
+    margin-left: 30%;
+    margin-right: 10%;
+    float: left;
+}
+#menu ul{
+   list-style-type: none;
+   text-align: center;
+   float: left;
+   width: 85%;
+   height: 100%;
+}
+#menu ul li{
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+#menu div ul li a {
+    display: block;
+    text-decoration: none;
+    padding-top: 17px;
+    position: relative;
+    height: 43px;
+}
+#menu div ul li a:hover{
+    background-color: #14D2C3;
+    color:#E1DFDF;
+}
