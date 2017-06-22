@@ -44,6 +44,14 @@
         <servlet-name>SubirLib</servlet-name>
         <servlet-class>Servlets.SubirLib</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Prestar</servlet-name>
+        <servlet-class>Servlets.Prestar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Devolver</servlet-name>
+        <servlet-class>Servlets.Devolver</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -87,6 +95,14 @@
     <servlet-mapping>
         <servlet-name>SubirLib</servlet-name>
         <url-pattern>/SubirLib</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Prestar</servlet-name>
+        <url-pattern>/Prestar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Devolver</servlet-name>
+        <url-pattern>/Devolver</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -60,6 +60,11 @@
 
 
         <script src="js/validacion.js" language="javascript" type="text/javascript"></script>
+        <script>
+            function asignar(idLibro){
+                document.getElementById("idLibro").value = idLibro;
+            }
+        </script>
     </head>
     <body onresize="window.resizeTo(800,500)"> 
         <div class="manzana">
@@ -127,14 +132,21 @@
                                 </div>
 
                                 <div id="introducir" class="row">
-                                    <% for( int i = 0; i < libros.size(); i++) {%>
-                                    <div class="col-lg-12">
-                                        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                                        <h2>Heading</h2>
-                                        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                                        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-                                    </div>
-                                    <%}%>
+                                    <form action="Prestar" method="POST">
+                                        <input type="hidden" name="idLibro" id="idLibro">
+                                        <% for( int i = 0; i < libros.size(); i++) {%>
+                                        <div class="col-lg-12">
+                                            <h2><%=libros.get(i).getNombreLibro() %></h2>
+                                            <p>Autor: <%=libros.get(i).getAutor() %>, 
+                                               Editorial: <%=libros.get(i).getEditorial() %>, 
+                                               Año: <%=libros.get(i).getAnio() %>, 
+                                               Genero: <%=libros.get(i).getGenero() %>
+                                            </p>
+                                            <p> Stock: <%=libros.get(i).getCantidad()%> </p>
+                                            <p><button onclick="asignar(<%=libros.get(i).getIdLibro()%>)" type="submit">Tomar Prestado</button></p>
+                                        </div>
+                                        <%}%>
+                                    </form>
                                 </div>
                         </div>
                     </div>

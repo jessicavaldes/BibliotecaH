@@ -1,12 +1,18 @@
+<%@page import="Clases.LibrosB"%>
+<%@page import="java.util.List"%>
+<%@page import="Clases.Libros"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="Clases.Usuario"%>
 <%
     String acc = request.getParameter("acc");
     Usuario h = new Usuario();
+    List<Libros> libros = null;
+    LibrosB obj = new LibrosB();
     boolean off = true;
     boolean tipo = false;
     try {
         h = ((Usuario) session.getAttribute("user"));
+        libros = obj.BuscarPrestamos();
     } catch (Exception e) {
         e.printStackTrace();
     }
@@ -54,6 +60,12 @@
 
 
         <script src="js/validacion.js" language="javascript" type="text/javascript"></script>
+        <script>
+            function asignar(idLibro, idPrestamo){
+                document.getElementById("idLibro").value = idLibro;
+                document.getElementById("idPrestamo").value = idPrestamo;
+            }
+        </script>
     </head>
     <body onresize="window.resizeTo(800,500)"> 
         <div class="manzana">
@@ -110,46 +122,33 @@
                 <div id="contenido">
                     <div id="info-menu">
                         <ul>
-                            <a href="?acc=1" ><li>CONSULTAR LIBROS DISPONIBLES</li></a>                     
-
+                            <li>Devuelve tus libros</li>
                         </ul>
                     </div>
                     <div id="info-contenido">
                         <div id="formulario">
                             <div id="campos">
-                                <%if (acc != null && (acc.equals("1"))) {
-                                        String[] titulo = {"Consultar libros disponibles"};
-                                        int num = Integer.parseInt(acc);
-
-                                %>
                                 <div id="titulo24">
-                                    <%= titulo[num - 1]%>
+                                    Devuelve tus libros
                                 </div>
 
-                                <div id="introducir">
-                                    <%
-                                        if (acc.equals("1")) {
-
-                                    %>
-                                    <form name="formu" action = "ActualizarU" method="POST">                 
-                                        <input type="text" name="Nombre" placeholder="Nombre: " class="cajatexto" size="30"><br>
-                                        <input type="text" name="ApellidoP" placeholder="Apellido Paterno: " class="cajatexto" size="30"><br>
-                                        <input type="text" name="ApellidoM" placeholder="Apellido Materno: " class="cajatexto" size="30"><br>
-                                        <input type="text" name="Correo" placeholder="Email: " class="cajatexto" size="30"><br>
-                                        <input type="text" name="usuario" placeholder="Usuario: " class="cajatexto" size="30"><br>  
-                                        <input type="password" name="passOld" placeholder="Contraseña Actual:" class="cajatexto" size="30"><br>  
-                                        <input type="password" name="pass" placeholder="Nueva Contraseña:" class="cajatexto" size="30"><br>  
-                                        <input type="password" name="pass2" placeholder="Confirme su contraseña:" class="cajatexto" size="30"> <br>  
-                                         <input type="hidden" name="idPersona" value="<%= h.getId() %>">
-                                        <input type="hidden" name="idtipo" value="4">
-                                        <button type="button" onclick="validacionMU()">Modificar</button>   
-                                    </form>                          
-                                <%
-                                    }
-                                %>
-
-                            </div>                          
-                            <%}%>
+                                <div id="introducir" class="row">
+                                    <form action="Devolver" method="POST">
+                                        <input type="hidden" name="idLibro" id="idLibro">
+                                        <input type="hidden" name="idPrestamo" id="idPrestamo">
+                                        <% for( int i = 0; i < libros.size(); i++) {%>
+                                        <div class="col-lg-12">
+                                            <h2><%=libros.get(i).getNombreLibro() %></h2>
+                                            <p>Autor: <%=libros.get(i).getAutor() %>, 
+                                               Editorial: <%=libros.get(i).getEditorial() %>, 
+                                               Año: <%=libros.get(i).getAnio() %>, 
+                                               Genero: <%=libros.get(i).getGenero() %>
+                                            </p>
+                                            <p><button onclick="asignar(<%=libros.get(i).getIdLibro()%>, <%=libros.get(i).getIdPrestamo() %>)" type="submit">Devolver Prestamo</button></p>
+                                        </div>
+                                        <%}%>
+                                    </form>
+                                </div>
                         </div>
                     </div>
                 </div>

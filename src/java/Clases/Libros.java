@@ -6,6 +6,8 @@ public class Libros {
     private String autor;
     private String editorial;
     private int anio;
+    private int cantidad;
+    private int idPrestamo;
     private String genero;
     private String Tipo;
 
@@ -27,6 +29,14 @@ public class Libros {
 
     public int getAnio() {
         return anio;
+    }
+    
+    public int getCantidad() {
+        return cantidad;
+    }
+    
+    public int getIdPrestamo() {
+        return idPrestamo;
     }
 
     public String getGenero() {
@@ -51,6 +61,14 @@ public class Libros {
 
     public void setAnio(int anio) {
         this.anio = anio;
+    }
+    
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+    
+    public void setIdPrestamo(int idPrestamo) {
+        this.idPrestamo = idPrestamo;
     }
 
     public void setGenero(String genero) {

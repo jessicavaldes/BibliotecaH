@@ -120,13 +120,15 @@ end//
 drop procedure if exists HacerPrestamo//
 CREATE PROCEDURE HacerPrestamo(_idPersona int, _idLibro int)
 BEGIN
-INSERT INTO Prestamo(idPersona, idLibro, status) values (_idPersona, _idLibro, true);
+INSERT INTO Prestamos(idPersona, idLibro, status) values (_idPersona, _idLibro, true);
+UPDATE TblLibros SET cantidad = cantidad - 1 WHERE idLibro = _idLibro;
 END//
 
 drop procedure if exists QuitarPrestamo//
-CREATE PROCEDURE QuitarPrestamo(_idPrestamo int)
+CREATE PROCEDURE QuitarPrestamo(_idPrestamo int, _idLibro int)
 BEGIN
-UPDATE Prestamo SET status = false WHERE idPrestamo = _idPrestamo;
+UPDATE Prestamos SET status = false WHERE idPrestamo = _idPrestamo;
+UPDATE TblLibros SET cantidad = cantidad + 1 WHERE idLibro = _idLibro;
 END//
 
 call RegistrarU('Sebastian','Santiago','Hernandez','sebasc@gmail.com','Sebas1','qwerty123',4);
