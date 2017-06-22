@@ -115,8 +115,7 @@
                             <a href="?acc=3" ><li>Eliminar Libro</li></a>
                             <a href="?acc=3" ><li>Stock de Libros</li></a>
                         </ul>
-                    </div>
-                    <div id="info-contenido">
+                    </div><div id="info-contenido">
                         <div id="formulario">
                             <div id="campos">
                                 <%if (acc != null && (acc.equals("1") || acc.equals("2") || acc.equals("3"))) {

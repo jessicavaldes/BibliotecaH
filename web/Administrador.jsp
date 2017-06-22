@@ -120,8 +120,7 @@
                             <li><a href="?acc=3" >Eliminar Bibliotecario(a)</a></li>
                             <li><a href="?acc=4" >Lista de usuarios</a></li>
                         </ul>
-                    </div>
-                    <div id="info-contenido">
+                    </div><div id="info-contenido">
                         <div id="formulario">
                             <div id="campos">
                                 <%if (acc != null && (acc.equals("1") || acc.equals("2") || acc.equals("3") || acc.equals("4"))) {
@@ -170,19 +169,24 @@
                                          <input type="hidden" name="idtipo" value="3">
                                          <button type="submit" onclick="validacionEU()">Eliminar</button>
                                      </form>
-                                    <% } else if (acc.equals("4")) {%>
+                                    <% } else if (acc.equals("4")) { %>
                                     <center>
                                     <table align="center" border="3" height="500" width="250" >
-                                            <th>Usuarios</th>
                                         <tr>
+                                            <th>Usuarios</th>
+                                        </tr>
+                                        <tr>
+                                            
+                                            <%=k.size() %>
+                                            <% for(int i = 0; i < k.size(); i++){ %>
                                             <td>
-                                         <%=k.size() %>
-                                         <% for(int i = 0; i < k.size(); i++){ %>
-                                         <%=k.get(i).getUsuario()%>          
-                                    <%}
-                                    }%>
+                                                <%=k.get(i).getUsuario()%>  
+                                            </td>
+                                            <% } } %>
+                                        </tr>
+                                    </table>
                                 </div>
-                                <%}%>
+                                <% } %>
                             </div>
                         </div>
                     </div>

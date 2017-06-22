@@ -119,8 +119,7 @@
                             <a href="?acc=8" ><li>Devolución</li></a>
                             <a href="?acc=9" ><li>Stock de Libros</li></a>
                         </ul>
-                    </div>
-                    <div id="info-contenido">
+                    </div><div id="info-contenido">
                         <div id="formulario">
                             <div id="campos">
                                 <%if (acc != null && (acc.equals("1") || acc.equals("2") || acc.equals("3") ||acc.equals("4") ||acc.equals("5") ||acc.equals("6") ||acc.equals("7")||acc.equals("8")||acc.equals("9")  )) {
