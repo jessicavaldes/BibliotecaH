@@ -51,7 +51,7 @@ public class UsuarioB {
                     ResultSet rs = ps.executeQuery();
                     Usuario p = null;
                     if(rs.next()) {
-                            p = crearDTO(rs);
+                        p = this.crearDTO(rs);
                     }
                     return p;
             }

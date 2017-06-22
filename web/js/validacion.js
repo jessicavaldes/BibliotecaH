@@ -1,26 +1,26 @@
 function validacionIS(){ //validacion del inicio de sesion
-    val=1;
+    var val = 1;
     
-    if (document.formu.usuario.value.length==0 || document.formu.usuario.value.length>8){ 
+    if (document.formu.usuario.value.length < 1 || document.formu.usuario.value.length > 8){ 
         alert("Tiene que escribir su usuario y no sobrepasar el limite de 8 caracteres");
         document.fvalida.nombre.focus();
         val= 0; 
     } 
     
-    if (document.formu.pass.value.length==0 || document.formu.pass.value.length>8){ 
-        alert("Tiene que escribir su contraseña y no sobrepasar el limite de 8 caracteres");
+    if (document.formu.pass.value.length < 1){ 
+        alert("Tiene que escribir su contraseña");
         document.fvalida.pass.focus();
         val= 0; 
     }
     
-    if(val==1){
+    if(val == 1){
         document.formu.submit();
     }
 }
     
 
 function validacionR(){ //validacion registro
-    val=1;
+    var val = 1;
     
     if (document.formu.Nombre.value.length==0 || document.formu.Nombre.value.length>20){ 
         alert("Tiene que escribir su nombre y no sobrepasar el limite de 20 caracteres");
@@ -69,7 +69,7 @@ function validacionR(){ //validacion registro
         }
     }
     
-    if(val==1){
+    if(val == 1){
         document.formu.submit();
     }
     

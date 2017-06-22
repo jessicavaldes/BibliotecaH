@@ -123,8 +123,7 @@
                         <ul>
                             <li>Búsqueda de libros</li>                          
                         </ul>
-                    </div>
-                    <div id="info-contenido">
+                    </div><div id="info-contenido">
                         <div id="formulario">
                             <div id="campos">
                                 <div id="titulo24">
@@ -135,7 +134,7 @@
                                     <form action="Prestar" method="POST">
                                         <input type="hidden" name="idLibro" id="idLibro">
                                         <% for( int i = 0; i < libros.size(); i++) {%>
-                                        <div class="col-lg-12">
+                                        <div class="col-md-2">
                                             <h2><%=libros.get(i).getNombreLibro() %></h2>
                                             <p>Autor: <%=libros.get(i).getAutor() %>, 
                                                Editorial: <%=libros.get(i).getEditorial() %>, 
@@ -143,7 +142,7 @@
                                                Genero: <%=libros.get(i).getGenero() %>
                                             </p>
                                             <p> Stock: <%=libros.get(i).getCantidad()%> </p>
-                                            <p><button onclick="asignar(<%=libros.get(i).getIdLibro()%>)" type="submit">Tomar Prestado</button></p>
+                                            <button onclick="asignar(<%=libros.get(i).getIdLibro()%>)" type="submit">Tomar Prestado</button>
                                         </div>
                                         <%}%>
                                     </form>
