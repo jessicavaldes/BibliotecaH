@@ -11,7 +11,7 @@ import java.util.List;
 public class LibrosB {
 
     public List<Libros> BuscarTodos() throws SQLException {
-		String query = "SELECT TblLibros.nombreLibro, TblLibros.Autor, TblLibros.Editorial, TblLibros.Genero,TblAcceso.idTipo from TblLibros INNER JOIN TblDatos ON TblLibros.idLibro=TblDatos.idPersona INNER JOIN TblAcceso ON TblDatos.idPersona=TblAcceso.idPersona;";
+		String query = "select*from tblLibros;";
 		try(Connection con = DB.getConnection()) {
 			PreparedStatement ps = con.prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
@@ -57,20 +57,7 @@ public class LibrosB {
         p.setEditorial(rs.getString("Editorial"));
         p.setGenero(rs.getString("Genero"));
         p.setAnio(rs.getInt("Anio"));
-        switch(rs.getString("idTipo")){
-            case "1":
-                p.setTipo("Administrador");
-                break;
-            case "2":
-                p.setTipo("Proveedor");
-                break;
-            case "3":
-                p.setTipo("Bibliotecario");
-                break;
-            case "4":
-                p.setTipo("Usuario");
-                break;
-            }
+        p.setTipo("Usuario");
         return p;
     }
 

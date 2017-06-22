@@ -1,12 +1,18 @@
+<%@page import="java.util.List"%>
+<%@page import="Clases.LibrosB"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="Clases.Usuario"%>
+<%@page import="Clases.Libros"%>
 <%
     String acc = request.getParameter("acc");
     Usuario h = new Usuario();
+    List<Libros> libros = null;
+    LibrosB obj = new LibrosB();
     boolean off = true;
     boolean tipo = false;
     try {
         h = ((Usuario) session.getAttribute("user"));
+        libros = obj.BuscarTodos();
     } catch (Exception e) {
         e.printStackTrace();
     }
@@ -116,24 +122,20 @@
                     <div id="info-contenido">
                         <div id="formulario">
                             <div id="campos">
-                                <%if (acc != null && (acc.equals("1"))) {
-                                        String[] titulo = {"Busqueda de libros"};
-                                        int num = Integer.parseInt(acc);
-
-                                %>
                                 <div id="titulo24">
                                     Libros
                                 </div>
 
                                 <div id="introducir" class="row">
+                                    <% for( int i = 0; i < libros.size(); i++) {%>
                                     <div class="col-lg-12">
                                         <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
                                         <h2>Heading</h2>
                                         <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
                                         <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
                                     </div>
-                                </div>                          
-                            <%}%>
+                                    <%}%>
+                                </div>
                         </div>
                     </div>
                 </div>
