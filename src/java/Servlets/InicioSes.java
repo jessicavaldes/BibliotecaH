@@ -14,7 +14,7 @@ public class InicioSes extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String usuario = request.getParameter("usuario");
+                String usuario = request.getParameter("usuario");
 		String password = request.getParameter("pass");
                 System.out.println(usuario + "   " + password);
                 UsuarioB us = new UsuarioB();
@@ -22,6 +22,7 @@ public class InicioSes extends HttpServlet {
                 try {
                     user= us.BuscarPorUsuario(usuario);
                 } catch (SQLException ex) {
+                    System.out.println(ex);
                     user=null;
                 }
 

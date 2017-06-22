@@ -171,15 +171,16 @@
                                      </form>
                                     <% } else if(acc.equals("4")){  
                                     %>
-                                            <form name="formu" action="SubirLb" method="Post">
+                                            <form name="formu" action="SubirLib" method="Post">
                                             <input type="text" name="idLibro" placeholder="idLibro:" class="cajatexto" size="30">
                                             <input type="text" name="NombreLibro" placeholder="Nombre Libro:" class="cajatexto" size="30">
                                             <input type="text" name="Autor" placeholder="Autor:" class="cajatexto" size="30">
                                             <input type="text" name="Editorial" placeholder="Editorial:" class="cajatexto" size="30">
-                                            <input type="text" name="Año" placeholder="Año:" class="cajatexto" size="30">
+                                            <input type="text" name="Anio" placeholder="Año:" class="cajatexto" size="30">
                                             <input type="text" name="Genero" placeholder="Género:" class="cajatexto" size="30">
-                                            <input type="hidden" name="idLibro" value="4"> 
-                                            <button type="submit" onclick="validacionSL()">Registrar Libro </button>
+                                            <input type="text" name="Cantidad" placeholder="Cantidad" class="cajatexto" size="10">
+                                            <!-- <input type="hidden" name="idLibro" value="4"> -->
+                                            <button type="submit">Registrar Libro </button>
                                         </form>
                                     <%} else if(acc.equals("5")){ %>
                                             <form name="formu" action="EliminarL" method="Post">

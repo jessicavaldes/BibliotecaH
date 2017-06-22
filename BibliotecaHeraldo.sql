@@ -36,7 +36,7 @@ Persona VARCHAR(11) NOT NULL
 
 CREATE TABLE TblAcceso (
 Usuario VARCHAR(20) PRIMARY KEY,
-ContraseÃ±a VARCHAR(30) NOT NULL,
+Contrasenia VARCHAR(30) NOT NULL,
 idPersona INT,
 idTipo INT(2),
 FOREIGN KEY(idPersona) REFERENCES TblDatos(idPersona),
@@ -67,7 +67,7 @@ INSERT INTO TblDatos (Nombre,Apaterno,Amaterno,Email) values
 ('Susan', 'Gutierrez', 'Suarez', 'loquesea@mailma.com')
 ;
 
-INSERT INTO TblAcceso (Usuario,ContraseÃ±a,idPersona,idTipo) values 
+INSERT INTO TblAcceso (Usuario,Contrasenia,idPersona,idTipo) values 
 ('Juan11', '1234', '1', '1'),
 ('Pepe11', '1234', '2', '2'),
 ('Diana11', '1234', '3', '3'),
@@ -83,16 +83,16 @@ INSERT INTO TblLibros (nombreLibro, Autor, Editorial, Genero, Anio, idPersona) v
 
 select * from TblLibros;
 
-SELECT TblDatos.idPersona, Nombre, Apaterno, Amaterno,idTipo, Usuario, ContraseÃ±a  FROM TblDatos INNER JOIN TblAcceso ON TblAcceso.idPersona=TblDatos.idPersona GROUP BY tblAcceso.idPersona;
+SELECT TblDatos.idPersona, Nombre, Apaterno, Amaterno,idTipo, Usuario, Contrasenia  FROM TblDatos INNER JOIN TblAcceso ON TblAcceso.idPersona=TblDatos.idPersona GROUP BY tblAcceso.idPersona;
 
 drop procedure if exists RegistrarU;
 delimiter //
-create procedure RegistrarU(_Nombre varchar(20),_Apaterno varchar(20),_Amaterno varchar(20),_Email varchar(30), _Usuario varchar(20),_ContraseÃ±a varchar(30),_idTipo int(2))
+create procedure RegistrarU(_Nombre varchar(20),_Apaterno varchar(20),_Amaterno varchar(20),_Email varchar(30), _Usuario varchar(20),_Contrasenia varchar(30),_idTipo int(2))
 begin 
 DECLARE _idPersona int default 0;
 insert into TblDatos (Nombre, Apaterno, Amaterno, Email) values (_Nombre,_Apaterno,_Amaterno,_Email);
 select max(idPersona) into _idPersona from TblDatos;
-insert into TblAcceso (Usuario,ContraseÃ±a,idPersona,idTipo) values (_Usuario,_ContraseÃ±a,_idPersona,_idTipo);
+insert into TblAcceso (Usuario,Contrasenia,idPersona,idTipo) values (_Usuario,_Contrasenia,_idPersona,_idTipo);
 end//
 
 Delimiter;
@@ -105,16 +105,16 @@ delete from TblAcceso where Usuario=_Usuario;
 end//
 
 drop procedure if exists ActualizarU//
-create procedure ActualizarU(_Nombre varchar(20),_Apaterno varchar(20),_Amaterno varchar(20),_Email varchar(30),_Usuario varchar(20),_ContraseÃ±a varchar(30),_idPersona int)
+create procedure ActualizarU(_Nombre varchar(20),_Apaterno varchar(20),_Amaterno varchar(20),_Email varchar(30),_Usuario varchar(20),_Contrasenia varchar(30),_idPersona int)
 begin
 Update TblDatos set Nombre=_Nombre, Apaterno=_Apaterno, Amaterno=_Amaterno, Email=_Email where idPersona=_idPersona;
-Update TblAcceso set Usuario=_Usuario, ContraseÃ±a=_ContraseÃ±a  where idPersona=_idPersona;
+Update TblAcceso set Usuario=_Usuario, Contrasenia=_Contrasenia  where idPersona=_idPersona;
 end//
 
 drop procedure if exists SubirL//
-CREATE PROCEDURE SubirL(_idLibro int, _nombreLibro varchar(50), _Autor VARCHAR(80), _Editorial VARCHAR (60), _Genero VARCHAR(30), _Anio int(7))
+CREATE PROCEDURE SubirL(_idLibro int, _nombreLibro varchar(50), _Autor VARCHAR(80), _Editorial VARCHAR (60), _Genero VARCHAR(30), _Anio int(7), _idPer int(10), _Cantidad int(10))
 begin
-insert into TblLibros (idLibro, nombreLibro, Autor, Editorial, Genero, Anio) values (_idLibro, _NombreLibro,_Autor, _Editorial, _Genero, _Anio);
+insert into TblLibros (idLibro, nombreLibro, Autor, Editorial, Genero, Anio, idPersona, cantidad) values (_idLibro, _NombreLibro,_Autor, _Editorial, _Genero, _Anio, _idPer, _Cantidad);
 end//
 
 drop procedure if exists HacerPrestamo//

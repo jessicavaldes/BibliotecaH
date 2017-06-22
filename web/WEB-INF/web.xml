@@ -40,6 +40,10 @@
         <servlet-name>SubirL</servlet-name>
         <servlet-class>Servlets.SubirL</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SubirLib</servlet-name>
+        <servlet-class>Servlets.SubirLib</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -79,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>SubirL</servlet-name>
         <url-pattern>/SubirL</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SubirLib</servlet-name>
+        <url-pattern>/SubirLib</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

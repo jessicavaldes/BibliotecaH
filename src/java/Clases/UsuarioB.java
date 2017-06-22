@@ -10,7 +10,7 @@ import java.util.List;
 public class UsuarioB {
 
     public List<Usuario> BuscarTodos() throws SQLException {
-            String query = "SELECT TblDatos.idPersona, Nombre, Apaterno, Amaterno, Email, idTipo, Usuario, Contraseña  FROM TblDatos INNER JOIN TblAcceso ON TblAcceso.idPersona=TblDatos.idPersona;";
+            String query = "SELECT * FROM TblDatos INNER JOIN TblAcceso ON TblAcceso.idPersona=TblDatos.idPersona;";
             try(Connection con = DB.getConnection()) {
                     PreparedStatement ps = con.prepareStatement(query);
                     ResultSet rs = ps.executeQuery();
@@ -44,7 +44,7 @@ public class UsuarioB {
     
     
     public Usuario BuscarPorUsuario(String usuario) throws SQLException {
-            String query = "SELECT TblDatos.idPersona, Nombre, Apaterno, Amaterno, Email, idTipo, Usuario, Contraseña  FROM TblDatos INNER JOIN TblAcceso ON TblAcceso.idPersona=TblDatos.idPersona WHERE usuario = ?";
+            String query = "SELECT * FROM TblDatos INNER JOIN TblAcceso ON TblAcceso.idPersona=TblDatos.idPersona WHERE usuario = ?";
             try(Connection con = DB.getConnection()) {
                     PreparedStatement ps = con.prepareStatement(query);
                     ps.setString(1, usuario);
@@ -60,7 +60,7 @@ public class UsuarioB {
      private Usuario crearDTO(ResultSet rs) throws SQLException {
         Usuario p = new Usuario();
         p.setUsuario(rs.getString("Usuario"));
-        p.setPassword(rs.getString("Contraseña"));
+        p.setPassword(rs.getString("Contrasenia"));
         p.setEmail(rs.getString("Email"));
         p.setNombre(rs.getString("Nombre"));
         p.setPaterno(rs.getString("Apaterno"));

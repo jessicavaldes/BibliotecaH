@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class SubirLb extends HttpServlet {
+public class SubirLib extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -17,17 +17,18 @@ public class SubirLb extends HttpServlet {
         LibrosB p = new LibrosB();
 
         String idLibro = request.getParameter("idLibro");
-        String nombreLibro = request.getParameter("nombreLibro");
+        String nombreLibro = request.getParameter("NombreLibro");
         String Autor = request.getParameter("Autor");
         String Genero = request.getParameter("Genero");
         String Editorial = request.getParameter("Editorial");        
-        String Anio = request.getParameter("Anio");
-        /*try {
-           // p.SubirLb(idLibro, nombreLibro, Autor, Editorial, Genero, Anio);
+        String Anio = request.getParameter("Anio");    
+        String Cantidad = request.getParameter("Cantidad");
+        try {
+            p.SubirLb(idLibro, nombreLibro, Autor, Editorial, Genero, Anio, Cantidad);
         } catch (SQLException ex) {
             ex.getMessage();
         }finally{
             response.sendRedirect("index.jsp");
-        }*/
+        }
     }
 }

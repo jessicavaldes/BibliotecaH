@@ -7,7 +7,7 @@ public class DB {
     
     	private static final String URL = "jdbc:mysql://localhost:3306/BibliotecaHeraldo";
 	private static final String USERNAME = "root";
-	private static final String PASSWORD = "holaola9861";
+	private static final String PASSWORD = "n0m3l0";
 	
 	public static Connection getConnection() throws SQLException{
 		try {

@@ -31,8 +31,8 @@ public class LibrosB {
 		}
 	}
     
-    public void SubirLb( String idLibro, String nombreLibro, String Autor, String Editorial, String Genero, String Anio) throws SQLException{
-            String query = "call SubirL(?,?,?,?,?,?);";
+    public void SubirLb( String idLibro, String nombreLibro, String Autor, String Editorial, String Genero, String Anio, String cantidad) throws SQLException{
+            String query = "call SubirL(?,?,?,?,?,?,?,?);";
             try(Connection con = DB.getConnection()){
                 PreparedStatement ps = con.prepareStatement(query);
                 ps.setString(1, idLibro);
@@ -41,6 +41,8 @@ public class LibrosB {
                 ps.setString(4, Editorial);
                 ps.setString(5, Genero);
                 ps.setString(6, Anio);
+                ps.setString(7, "2");
+                ps.setString(8, cantidad);
                 ResultSet rs = ps.executeQuery();
             }catch(Exception e){
                 e.printStackTrace();

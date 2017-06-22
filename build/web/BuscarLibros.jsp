@@ -110,7 +110,7 @@
                 <div id="contenido">
                     <div id="info-menu">
                         <ul>
-                            <a href="?acc=1" ><li>Búsqueda de libros</li></a>                           
+                            <li>Búsqueda de libros</li>                          
                         </ul>
                     </div>
                     <div id="info-contenido">
@@ -122,20 +122,17 @@
 
                                 %>
                                 <div id="titulo24">
-                                    <%= titulo[num - 1]%>
+                                    Libros
                                 </div>
 
-                                <div id="introducir">
-                                    <%
-                                        if (acc.equals("1")) {
-
-                                    %>
-                                    
-                                <%
-                                    }
-                                %>
-
-                            </div>                          
+                                <div id="introducir" class="row">
+                                    <div class="col-lg-12">
+                                        <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                                        <h2>Heading</h2>
+                                        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                                        <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                                    </div>
+                                </div>                          
                             <%}%>
                         </div>
                     </div>
