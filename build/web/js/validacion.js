@@ -76,58 +76,46 @@ function validacionR(){ //validacion registro
 }
     
     function validacionMU() { //validacion de modificar usuario
-    val=1;
+    var val = 1;
+    
+    if (document.formumodf.Nombre.value.length < 1){ 
+        alert("El campo de nombre no puede estar vacio");
+        document.formumodf.Nombre.focus();
+        val= 0; 
+    } 
+    
+    if (document.formumodf.ApellidoP.value.length < 1){ 
+        alert("El campo de apellido paterno no puede estar vacio");
+        document.formumodf.ApellidoP.focus();
+        val= 0; 
+    } 
 
-    
-    if (document.formu.Nombre.value.length==0){ 
-        alert("Tiene que escribir su nuevo nombre");
-        document.fvalida.Nombre.focus();
-        val= 0; 
-    } 
-    
-        if (document.formu.ApellidoP.value.length==0){ 
-        alert("Tiene que escribir su nuevo apellido paterno");
-        document.fvalida.ApellidoP.focus();
-        val= 0; 
-    } 
-
-    if (document.formu.ApellidoM.value.length==0){ 
-        alert("Tiene que escribir su nuevo apellido materno");
-        document.fvalida.ApellidoM.focus();
-        val= 0; 
-    } 
-    
-    
-    if (document.formu.usuario.value.length==0){ 
-        alert("Tiene que escribir su nuevo usuario");
-        document.fvalida.nombre.focus();
-        val= 0; 
-    } 
-   
-    if (document.formu.pass.value.length==0){ 
-        alert("Tiene que escribir su nueva contraseña");
-        document.fvalida.pass.focus();
+    if (document.formumodf.ApellidoM.value.length < 1){ 
+        alert("El campo de apellido materno no puede estar vacio");
+        document.formumodf.ApellidoM.focus();
         val= 0; 
     }
     
-    if (document.formu.pass2.value.length==0){ 
-        alert("Tiene que escribir la contraseña de confirmación");
-        document.fvalida.pass2.focus();
+    if (document.formumodf.Correo.value.length < 1){ 
+        alert("El campo correo electrónico no puede estar vacio");
+        document.formumodf.Correo.focus();
         val= 0; 
-    }else{
-        if (document.formu.pass.value!=document.formu.pass2.value){
-            alert("Error: La contraseñas no coinciden");
-            val= 0;
-        }
-    }
+    } 
     
-    if (document.formu.idtipo.value!=4){ 
-        alert("Error fatal");
+    if (document.formumodf.usuario.value.length < 1){ 
+        alert("El campo de usuario no puede estar vacio");
+        document.formumodf.nombre.focus();
         val= 0; 
     }
     
-    if(val==1){
-        document.formu.submit();
+    if (document.formumodf.passOld.value.length < 1){ 
+        alert("Escribe tu contraseña para poder realizar los cambios");
+        document.formumodf.passOld.focus();
+        val= 0; 
+    } 
+    
+    if(val === 1){
+        document.formumodf.submit();
     }
     
     

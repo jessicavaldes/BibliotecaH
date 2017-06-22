@@ -21,6 +21,7 @@ public class ActualizarU extends HttpServlet {
         
         UsuarioB p = new UsuarioB();
         Usuario h = new Usuario();
+        Usuario old = (Usuario) session.getAttribute("user");
         
         String nombre = request.getParameter("Nombre");
         String paterno = request.getParameter("ApellidoP");
@@ -48,18 +49,25 @@ public class ActualizarU extends HttpServlet {
             case "4":
                 h.setTipo("Usuario");
             }
-        h.setPassword(password);
         h.setEmail(email);
         h.setId(id);
+        if ( !password.equals("") ) {
+            h.setPassword(password);
+        } else {
+            h.setPassword(passwordOld);
+        }
         h.setUsuario(usuario);
         
         
         try {
-            Usuario usuario1 = (Usuario) session.getAttribute("user");
-            String passOld = usuario1.getPassword();
-            if(passOld.equals(passwordOld) ){
-            p.ActualizarU(nombre,paterno,materno,email, usuario,password,id);
-            session.setAttribute("user",h);
+            String newPass = old.getPassword();
+            if ( !password.equals("") ) {
+                newPass = password;
+            }
+            
+            if( old.getPassword().equals(passwordOld) ){
+                p.ActualizarU(nombre,paterno,materno,email, usuario,newPass,id);
+                session.setAttribute("user", h);
             }
         } 
         catch (SQLException ex) {

@@ -133,16 +133,16 @@
                                         if (acc.equals("1")) {
 
                                     %>
-                                    <form name="formu" action = "ActualizarU" method="POST">                 
-                                        <input type="text" name="Nombre" placeholder="Nombre: " class="cajatexto" size="30"><br>
-                                        <input type="text" name="ApellidoP" placeholder="Apellido Paterno: " class="cajatexto" size="30"><br>
-                                        <input type="text" name="ApellidoM" placeholder="Apellido Materno: " class="cajatexto" size="30"><br>
-                                        <input type="text" name="Correo" placeholder="Email: " class="cajatexto" size="30"><br>
-                                        <input type="text" name="usuario" placeholder="Usuario: " class="cajatexto" size="30"><br>  
+                                    <form name="formumodf" action="ActualizarU" method="POST">                 
+                                        <input type="text" name="Nombre" placeholder="Nombre: " class="cajatexto" size="30" value="<%= h.getNombre() %>"><br>
+                                        <input type="text" name="ApellidoP" placeholder="Apellido Paterno: " class="cajatexto" size="30" value="<%= h.getPaterno() %>"><br>
+                                        <input type="text" name="ApellidoM" placeholder="Apellido Materno: " class="cajatexto" size="30" value="<%= h.getMaterno() %>"><br>
+                                        <input type="text" name="Correo" placeholder="Email: " class="cajatexto" size="30" value="<%= h.getEmail() %>"><br>
+                                        <input type="text" name="usuario" placeholder="Usuario: " class="cajatexto" size="30" value="<%= h.getUsuario() %>"><br>  
                                         <input type="password" name="passOld" placeholder="Contraseña Actual:" class="cajatexto" size="30"><br>  
                                         <input type="password" name="pass" placeholder="Nueva Contraseña:" class="cajatexto" size="30"><br>  
                                         <input type="password" name="pass2" placeholder="Confirme su contraseña:" class="cajatexto" size="30"> <br>  
-                                         <input type="hidden" name="idPersona" value="<%= h.getId() %>">
+                                        <input type="hidden" name="idPersona" value="<%= h.getId() %>">
                                         <input type="hidden" name="idtipo" value="4">
                                         <button type="button" onclick="validacionMU()">Modificar</button>   
                                     </form>                          
