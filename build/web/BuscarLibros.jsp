@@ -134,7 +134,7 @@
                                     <form action="Prestar" method="POST">
                                         <input type="hidden" name="idLibro" id="idLibro">
                                         <% for( int i = 0; i < libros.size(); i++) {%>
-                                        <div class="col-md-2">
+                                        <div class="col" style="width: 48%;display: inline-block;vertical-align: top;">
                                             <h2><%=libros.get(i).getNombreLibro() %></h2>
                                             <p>Autor: <%=libros.get(i).getAutor() %>, 
                                                Editorial: <%=libros.get(i).getEditorial() %>, 
